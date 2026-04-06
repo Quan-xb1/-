@@ -1,0 +1,316 @@
+{
+  "name": "资产评估工具导航",
+  "description": "资产评估行业常用网站导航，收录房地产、车辆、设备、知识产权等各类评估查询工具",
+  "categories": [
+    {
+      "name": "评估常用工具",
+      "icon": "🧮",
+      "sites": [
+        {"name": "资产评估收费计算器", "url": "http://www.rehuoji.com/post/75.html", "desc": "按资产总额分档计算评估收费"},
+        {"name": "房地产估价收费计算器", "url": "http://www.rehuoji.com/post/76.html", "desc": "房地产评估费用快速计算"},
+        {"name": "土地估价收费计算器", "url": "http://www.rehuoji.com/post/77.html", "desc": "土地评估收费计算"},
+        {"name": "审计收费计算器", "url": "http://www.rehuoji.com/post/78.html", "desc": "审计服务费用计算"},
+        {"name": "LPR线性插值计算器", "url": "http://rehuoji.com/post/1382.html", "desc": "贷款市场报价利率插值计算"},
+        {"name": "年薪筹划计算器", "url": "http://rehuoji.com/post/98.html", "desc": "年薪个税筹划计算"},
+        {"name": "年终奖计算器", "url": "https://rehuoji.com/post/95.html", "desc": "年终奖个税计算"},
+        {"name": "劳务报酬计算器", "url": "http://rehuoji.com/post/100.html", "desc": "劳务报酬所得计算"}
+      ]
+    },
+    {
+      "name": "自动估价",
+      "icon": "📊",
+      "sites": [
+        {"name": "车300", "url": "https://www.che300.com/", "desc": "二手车估价查询"},
+        {"name": "云房价", "url": "http://www.yunfangjia.com/", "desc": "房价评估参考"},
+        {"name": "房价网", "url": "http://sh.fangjia.com/gujia", "desc": "城市房价行情查询"},
+        {"name": "房天下", "url": "https://fangjia.fang.com/bj/", "desc": "城市房价数据"}
+      ]
+    },
+    {
+      "name": "报告查询",
+      "icon": "📄",
+      "sites": [
+        {"name": "巨潮资讯网", "url": "http://www.cninfo.com.cn/", "desc": "上市公司公告披露"},
+        {"name": "上海证券交易所", "url": "http://www.suaee.com/", "desc": "上交所官方平台"},
+        {"name": "深圳证券交易所", "url": "https://www.szse.cn/", "desc": "深交所官方平台"},
+        {"name": "北京证券交易所", "url": "https://www.bse.cn/", "desc": "北交所官网"},
+        {"name": "中小企业股份转让系统", "url": "http://www.neeq.com.cn/", "desc": "新三板信息公示"},
+        {"name": "中国资产评估协会", "url": "http://www.cas.org.cn/", "desc": "评估行业自律组织"},
+        {"name": "中国政府采购网", "url": "http://www.ccgp.gov.cn/", "desc": "政府采购信息发布"},
+        {"name": "兰德智库", "url": "https://www.rand.org/", "desc": "美国智库研究机构"},
+        {"name": "国际战略研究所", "url": "https://www.iiss.org/", "desc": "国际安全战略研究"},
+        {"name": "卡内基国际和平基金会", "url": "https://carnegieendowment.org/", "desc": "国际政策研究"},
+        {"name": "全球化智库", "url": "http://www.ccg.org.cn/", "desc": "中国全球化智库"},
+        {"name": "观研报告网", "url": "https://www.chinabaogao.com/", "desc": "行业研究报告"},
+        {"name": "发现报告", "url": "https://www.fxbaogao.com/", "desc": "研究报告搜索"},
+        {"name": "研报客", "url": "https://www.yanbaoke.com/", "desc": "研报分享平台"}
+      ]
+    },
+    {
+      "name": "房地产评估",
+      "icon": "🏠",
+      "sites": [
+        {"name": "中指云", "url": "https://www.cih-index.com/", "desc": "房地产数据与分析"},
+        {"name": "房价行情网", "url": "http://www.creprice.cn/", "desc": "城市房价行情分析"},
+        {"name": "全国房价行情", "url": "https://www.creprice.cn/onemap.html", "desc": "全国房价分布地图"},
+        {"name": "房天下", "url": "https://fang.com/", "desc": "房地产门户"},
+        {"name": "链家", "url": "https://wh.lianjia.com/", "desc": "房源及价格查询"},
+        {"name": "58同城", "url": "https://bj.58.com/", "desc": "分类信息平台"},
+        {"name": "安居客", "url": "https://wuhan.anjuke.com/", "desc": "房价评估参考"},
+        {"name": "贝壳找房", "url": "https://wh.ke.com/", "desc": "房源及成交查询"},
+        {"name": "Q房网", "url": "https://www.qfang.com/", "desc": "房地产数据"},
+        {"name": "我爱我家", "url": "https://bj.5i5j.com/", "desc": "房产中介平台"}
+      ]
+    },
+    {
+      "name": "造价信息",
+      "icon": "📐",
+      "sites": [
+        {"name": "建设工程造价管理协会", "url": "http://www.ccea.pro/", "desc": "工程造价行业组织"},
+        {"name": "广联达", "url": "http://www.gldzb.com/", "desc": "工程造价软件"},
+        {"name": "建筑工程造价信息网", "url": "http://www.cecn.org.cn/", "desc": "造价信息查询"},
+        {"name": "168造价", "url": "http://www.cost168.com/", "desc": "造价指标查询"},
+        {"name": "造价通", "url": "http://zjtcn.com", "desc": "建材造价查询"},
+        {"name": "造价指数指标", "url": "http://ciac.zjw.sh.gov.cn/JGBGCZJInterWeb/Zszb/ZszbIndex", "desc": "上海造价指数"},
+        {"name": "可再生能源工程造价信息", "url": "http://www.hydrocost.org.cn/price/priceIndex.jsp", "desc": "水电工程造价"},
+        {"name": "独立费", "url": "https://www.dulifei.com/standard", "desc": "独立费用查询"},
+        {"name": "中国预算网", "url": "http://de.yusuan.com/hy_content.asp?area=100031&bhid=23&dm_id=100031001&sub_id=47&zmid=5449", "desc": "工程造价预算"},
+        {"name": "广东造价信息网", "url": "http://www.gdcost.com/", "desc": "广东省造价信息"},
+        {"name": "新疆工程造价信息网", "url": "http://www.xjzj.com/", "desc": "新疆造价信息"}
+      ]
+    },
+    {
+      "name": "土地市场",
+      "icon": "🌍",
+      "sites": [
+        {"name": "地价信息服务平台", "url": "http://www.landvalue.com.cn/", "desc": "城市地价查询"},
+        {"name": "土地资源网", "url": "http://www.tdzyw.com/", "desc": "土地资源信息"},
+        {"name": "自然资源部", "url": "http://www.mnr.gov.cn/", "desc": "自然资源部官网"},
+        {"name": "土地市场（自然资源部）", "url": "http://landchina.mnr.gov.cn/", "desc": "土地出让信息"},
+        {"name": "土地市场网", "url": "https://www.landchina.com/", "desc": "土地交易信息"},
+        {"name": "土流网", "url": "https://www.tuliu.com/", "desc": "土地流转平台"},
+        {"name": "地合网", "url": "https://dihe.cn/", "desc": "土地交易服务"},
+        {"name": "公共资源交易平台", "url": "https://www.ggzy.gov.cn/", "desc": "公共资源交易"},
+        {"name": "自然资源经济研究院", "url": "http://www.canre.org.cn/", "desc": "土地经济研究"},
+        {"name": "中国土地科学", "url": "http://www.chinalandscience.com.cn/", "desc": "土地科学研究"},
+        {"name": "国土勘测规划网", "url": "http://www.clspi.org.cn/", "desc": "国土勘测规划"}
+      ]
+    },
+    {
+      "name": "机器设备",
+      "icon": "⚙️",
+      "sites": [
+        {"name": "盘活网（二手设备）", "url": "https://www.51panhuo.com/", "desc": "二手设备处置"},
+        {"name": "网优（二手设备）", "url": "http://www.fengj.com/", "desc": "二手设备交易"},
+        {"name": "前瞻网", "url": "https://www.qianzhan.com/", "desc": "行业趋势研究"},
+        {"name": "外贸实务查询服务", "url": "http://wmsw.mofcom.gov.cn/wmsw/", "desc": "外贸实务查询"},
+        {"name": "阿里1688", "url": "https://www.1688.com/", "desc": "工业品价格参考"},
+        {"name": "机价网", "url": "http://www.mepprice.com/", "desc": "机械设备价格"},
+        {"name": "百度爱采购", "url": "https://b2b.baidu.com/", "desc": "B2B采购平台"},
+        {"name": "废钢资源网", "url": "http://www.feigang.net/", "desc": "废钢价格查询"},
+        {"name": "我的钢铁网", "url": "https://www.mysteel.com/", "desc": "钢铁价格行情"},
+        {"name": "西本新干线", "url": "http://www.96369.net/", "desc": "大宗商品行情"},
+        {"name": "马可波罗", "url": "https://china.makepolo.com/", "desc": "工业品搜索"},
+        {"name": "铁甲网", "url": "http://www.cehome.com/", "desc": "工程机械信息"},
+        {"name": "铁甲二手机", "url": "https://www.tiebaobei.com/", "desc": "二手工程机械"}
+      ]
+    },
+    {
+      "name": "车辆评估",
+      "icon": "🚗",
+      "sites": [
+        {"name": "中国汽车流通协会", "url": "http://www.cada.cn/", "desc": "汽车行业组织"},
+        {"name": "汽车之家", "url": "https://www.autohome.com.cn/", "desc": "车型及价格查询"},
+        {"name": "太平洋汽车网", "url": "http://price.pcauto.com.cn/", "desc": "汽车报价查询"},
+        {"name": "卡车之家", "url": "http://www.360che.com/", "desc": "卡车信息平台"},
+        {"name": "懂车帝", "url": "https://www.dongchedi.com/", "desc": "二手车估价"},
+        {"name": "易车网", "url": "https://price.bitauto.com/", "desc": "汽车报价"},
+        {"name": "二手车之家", "url": "http://www.che168.com/", "desc": "二手车信息"},
+        {"name": "瓜子二手车", "url": "https://www.guazi.com/", "desc": "二手车交易"},
+        {"name": "天天拍车", "url": "https://www.ttpai.cn/", "desc": "二手车拍卖"},
+        {"name": "华夏二手车", "url": "https://www.hx2car.com/", "desc": "二手车平台"},
+        {"name": "金恒德汽车用品价格指数", "url": "http://www.jhdindex.com/Default.aspx?tabid=94", "desc": "汽车配件价格指数"}
+      ]
+    },
+    {
+      "name": "电子设备",
+      "icon": "💻",
+      "sites": [
+        {"name": "中关村在线", "url": "http://www.zol.com.cn/", "desc": "IT产品报价"},
+        {"name": "爱回收", "url": "https://www.aihuishou.com/", "desc": "电子产品回收估价"},
+        {"name": "京东", "url": "https://www.jd.com/", "desc": "电子产品价格参考"},
+        {"name": "京东工业品", "url": "https://mro.jd.com/", "desc": "工业品采购"},
+        {"name": "泡泡网", "url": "https://product.pcpop.com/", "desc": "产品报价"},
+        {"name": "正二品", "url": "http://www.zhengerpin.com/", "desc": "二手设备估价"},
+        {"name": "中国供应商", "url": "http://cn.china.cn/", "desc": "供应商搜索"},
+        {"name": "中国生物器材网", "url": "http://www.bio-equip.com/", "desc": "生物仪器设备"},
+        {"name": "分析测试百科网", "url": "http://www.antpedia.com/", "desc": "仪器分析"},
+        {"name": "维库仪器仪表网", "url": "http://www.hi1718.com/", "desc": "仪器仪表价格"}
+      ]
+    },
+    {
+      "name": "船舶评估",
+      "icon": "🚢",
+      "sites": [
+        {"name": "中国船级社", "url": "http://www.ccs.org.cn/", "desc": "船舶检验认证"},
+        {"name": "国际航运公会", "url": "https://www.ics-shipping.org/", "desc": "国际航运组织"},
+        {"name": "船队在线", "url": "https://www.hifleet.com/", "desc": "船舶动态监控"},
+        {"name": "船讯网", "url": "http://www.shipxy.com/", "desc": "船舶位置查询"},
+        {"name": "中船船舶交易网", "url": "http://www.csscsnp.com/", "desc": "船舶交易服务"},
+        {"name": "中华船舶交易网", "url": "https://www.cn-eship.com/index.jsp?page=cj.jsp", "desc": "船舶买卖"},
+        {"name": "国际船舶网", "url": "http://www.eworldship.com/shipsales", "desc": "船舶交易信息"},
+        {"name": "天天拍船舶网", "url": "http://www.ttship.com/index.html", "desc": "船舶拍卖"},
+        {"name": "拍船网", "url": "https://www.shipbid.net/", "desc": "船舶交易平台"},
+        {"name": "广州航运交易平台", "url": "https://www.gse020.com/", "desc": "航运交易服务"}
+      ]
+    },
+    {
+      "name": "知识产权",
+      "icon": "💡",
+      "sites": [
+        {"name": "知识产权导航", "url": "http://rehuoji.com/post/96.html", "desc": "知识产权查询入口"},
+        {"name": "中国商标网", "url": "http://wcjs.sbj.cnipa.gov.cn/", "desc": "商标查询"},
+        {"name": "国家知识产权局", "url": "https://www.cnipa.gov.cn/", "desc": "知识产权局官网"},
+        {"name": "国家知识产权公共服务网", "url": "http://ggfw.cnipa.gov.cn", "desc": "专利商标查询"},
+        {"name": "中国版权保护中心", "url": "http://www.ccopyright.com.cn/", "desc": "版权登记查询"},
+        {"name": "中国专利公布公告", "url": "http://epub.cnipa.gov.cn/", "desc": "专利公布公告"},
+        {"name": "SooPAT专利搜索", "url": "http://www.soopat.com/", "desc": "专利检索"},
+        {"name": "美国专利商标局", "url": "https://www.uspto.gov/", "desc": "USPTO专利查询"},
+        {"name": "权大师", "url": "http://www.quandashi.com/", "desc": "知识产权服务"},
+        {"name": "佰腾网", "url": "http://so.baiten.cn/", "desc": "专利搜索"},
+        {"name": "标库网", "url": "https://www.tmkoo.com/", "desc": "商标查询"}
+      ]
+    },
+    {
+      "name": "苗木评估",
+      "icon": "🌲",
+      "sites": [
+        {"name": "园艺学会", "url": "https://www.cshs.org.cn/", "desc": "花卉苗木行业"},
+        {"name": "花卉园艺网", "url": "https://www.china-flower.com/", "desc": "花卉行情"},
+        {"name": "园林网", "url": "http://www.yuanlin.com/mmbj/", "desc": "苗木价格参考"},
+        {"name": "苗青青", "url": "https://www.312green.com/", "desc": "苗木交易平台"},
+        {"name": "金投苗木", "url": "https://jiage.cngold.org/miaomu/", "desc": "苗木价格"}
+      ]
+    },
+    {
+      "name": "能源矿产",
+      "icon": "⛽",
+      "sites": [
+        {"name": "中国矿业联合会", "url": "http://www.chinamining.org.cn/", "desc": "矿业行业组织"},
+        {"name": "煤炭市场网", "url": "http://www.cctd.com.cn/", "desc": "煤炭价格行情"},
+        {"name": "国际能源署", "url": "https://www.iea.org/", "desc": "全球能源数据"},
+        {"name": "大连商品交易所", "url": "http://www.dce.com.cn/", "desc": "期货行情"},
+        {"name": "上海有色网", "url": "https://www.smm.cn/", "desc": "有色金属价格"},
+        {"name": "煤炭资源网", "url": "http://www.sxcoal.com/", "desc": "煤炭信息"},
+        {"name": "煤炭网", "url": "http://www.ccoalnews.com/index.html", "desc": "煤炭市场资讯"}
+      ]
+    },
+    {
+      "name": "汇率利率",
+      "icon": "💰",
+      "sites": [
+        {"name": "国债收益率曲线", "url": "http://www.cas.org.cn/zggzsysqxlm/index.htm", "desc": "国债收益率参考"},
+        {"name": "国家外汇管理局", "url": "http://www.safe.gov.cn/", "desc": "外汇管理政策"},
+        {"name": "中国人民银行", "url": "http://www.pbc.gov.cn/rmyh/index.html", "desc": "央行利率政策"},
+        {"name": "中国银行", "url": "https://www.boc.cn/fimarkets/lilv/", "desc": "外汇汇率查询"},
+        {"name": "中国债权信息网", "url": "https://www.chinabond.com.cn/", "desc": "债券信息"},
+        {"name": "LPR市场利率", "url": "https://www.chinamoney.com.cn/chinese/bklpr/", "desc": "贷款市场报价利率"},
+        {"name": "中国外汇交易中心", "url": "http://www.chinamoney.com.cn/", "desc": "外汇交易市场"},
+        {"name": "经济指标网", "url": "https://zh.tradingeconomics.com/", "desc": "全球利率数据"},
+        {"name": "和讯网", "url": "https://www.hexun.com/", "desc": "财经数据"},
+        {"name": "美国联邦储备系统", "url": "https://www.federalreserve.gov/", "desc": "美联储利率"}
+      ]
+    },
+    {
+      "name": "数据与指数",
+      "icon": "📈",
+      "sites": [
+        {"name": "国家统计局", "url": "http://www.stats.gov.cn/", "desc": "宏观数据"},
+        {"name": "国家发展和改革委员会", "url": "http://www.ndrc.gov.cn/", "desc": "政策发布"},
+        {"name": "国证指数", "url": "http://www.cnindex.com.cn/", "desc": "指数查询"},
+        {"name": "中证指数", "url": "http://www.csindex.com.cn/", "desc": "股票指数"},
+        {"name": "国家数据中心", "url": "http://data.stats.gov.cn/", "desc": "统计数据"},
+        {"name": "国际货币基金组织", "url": "https://www.imf.org/", "desc": "IMF经济数据"},
+        {"name": "世界银行数据库", "url": "https://data.worldbank.org.cn/", "desc": "全球发展数据"},
+        {"name": "经济合作与发展组织", "url": "https://data.oecd.org/", "desc": "OECD数据"},
+        {"name": "东方财富网", "url": "http://www.eastmoney.com/", "desc": "财经门户"},
+        {"name": "金融界", "url": "http://www.jrj.com.cn/", "desc": "金融资讯"},
+        {"name": "英为财情", "url": "https://cn.investing.com/", "desc": "全球市场数据"},
+        {"name": "FRED联储经济数据", "url": "https://www.stlouisfed.org/", "desc": "美联储经济数据"},
+        {"name": "中国知网", "url": "https://www.cnki.net/", "desc": "学术文献"},
+        {"name": "万方数据", "url": "https://www.wanfangdata.com.cn/", "desc": "学术资源"},
+        {"name": "超星图书馆", "url": "https://www.chaoxing.com/", "desc": "电子图书"}
+      ]
+    },
+    {
+      "name": "法院诉讼",
+      "icon": "⚖️",
+      "sites": [
+        {"name": "无讼案例", "url": "https://www.itslaw.com/bj", "desc": "法律案例检索"},
+        {"name": "人民法院诉讼资产网", "url": "http://www.rmfysszc.gov.cn/", "desc": "诉讼资产处置"},
+        {"name": "执行信息公开网", "url": "http://zxgk.court.gov.cn/", "desc": "被执行人查询"},
+        {"name": "人民法院公告网", "url": "http://rmfygg.court.gov.cn/", "desc": "法院公告"},
+        {"name": "裁判文书网", "url": "http://wenshu.court.gov.cn/", "desc": "判决文书查询"},
+        {"name": "北大法宝", "url": "https://www.pkulaw.com/", "desc": "法律数据库"},
+        {"name": "银行征信中心", "url": "http://www.pbccrc.org.cn/", "desc": "征信查询"},
+        {"name": "破产重整案件信息网", "url": "https://pccz.court.gov.cn/pcajxxw/index/xxwsy", "desc": "破产案件信息"}
+      ]
+    },
+    {
+      "name": "资产处置",
+      "icon": "🔨",
+      "sites": [
+        {"name": "产权交易所", "url": "http://www.rehuoji.com/post/1799.html", "desc": "产权交易平台"},
+        {"name": "金马甲", "url": "http://www.jinmajia.com/", "desc": "资产交易平台"},
+        {"name": "阿里拍卖", "url": "https://sf.taobao.com/", "desc": "司法拍卖"},
+        {"name": "京东拍卖", "url": "https://auction.jd.com/", "desc": "资产拍卖"},
+        {"name": "劲标网", "url": "https://www.alltobid.com/", "desc": "招标信息"},
+        {"name": "中拍平台", "url": "https://paimai.caa123.org.cn/", "desc": "拍卖平台"},
+        {"name": "e交易", "url": "https://www.ejy365.com/", "desc": "公共资源交易"}
+      ]
+    },
+    {
+      "name": "运费查询",
+      "icon": "📦",
+      "sites": [
+        {"name": "物通网", "url": "https://www.chinawutong.com/", "desc": "物流信息"},
+        {"name": "公路物流运价指数", "url": "http://index.0256.cn/", "desc": "运价指数"},
+        {"name": "上海航交所", "url": "https://www.sse.net.cn/index/singleIndex?indexType=ccfi", "desc": "航运运价指数"},
+        {"name": "交通运输部", "url": "https://www.mot.gov.cn/yunjiazhishu/", "desc": "运价指数发布"},
+        {"name": "中国邮政", "url": "https://www.ems.com.cn/", "desc": "邮政快递"},
+        {"name": "顺丰快递", "url": "https://www.sf-express.com/chn/sc/waybill/list", "desc": "快递查询"},
+        {"name": "德邦快递", "url": "https://www.deppon.com/", "desc": "物流快递"},
+        {"name": "快递100", "url": "https://www.kuaidi100.com/", "desc": "快递跟踪"},
+        {"name": "DHL", "url": "https://www.dhl.com/", "desc": "国际快递"}
+      ]
+    },
+    {
+      "name": "地图街景",
+      "icon": "🗺️",
+      "sites": [
+        {"name": "高德地图", "url": "https://www.amap.com/", "desc": "地图及位置服务"},
+        {"name": "百度地图", "url": "https://map.baidu.com/", "desc": "地图服务"},
+        {"name": "腾讯地图", "url": "http://map.qq.com/", "desc": "地图服务"},
+        {"name": "天地图", "url": "http://www.tianditu.cn/", "desc": "国家地理信息公共服务"}
+      ]
+    },
+    {
+      "name": "其他",
+      "icon": "📎",
+      "sites": [
+        {"name": "工商信息查询", "url": "http://rehuoji.com/post/93.html", "desc": "企业工商信息"},
+        {"name": "电子税务局", "url": "http://www.rehuoji.com/post/116.html", "desc": "各省税务入口"},
+        {"name": "标准查询", "url": "http://rehuoji.com/post/1798.html", "desc": "标准法规查询"},
+        {"name": "国家标准公开平台", "url": "https://openstd.samr.gov.cn/", "desc": "国家标准全文"},
+        {"name": "财政部", "url": "http://www.mof.gov.cn/", "desc": "财政部官网"},
+        {"name": "国资委", "url": "http://www.sasac.gov.cn", "desc": "国有资产监管"},
+        {"name": "证监会", "url": "http://www.csrc.gov.cn/", "desc": "证券监管"},
+        {"name": "国家税务总局", "url": "http://www.chinatax.gov.cn", "desc": "税务政策"},
+        {"name": "市场监督管理总局", "url": "http://www.samr.gov.cn/", "desc": "市场监管"},
+        {"name": "金融监督管理总局", "url": "https://www.nfra.gov.cn/", "desc": "金融监管"},
+        {"name": "高新技术企业认定网", "url": "http://www.innocom.gov.cn/", "desc": "高企认定"},
+        {"name": "本福特定律检验", "url": "https://www.itshenji.com/benfute/", "desc": "财务造假快速检验"}
+      ]
+    }
+  ]
+}
