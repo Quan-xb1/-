@@ -374,7 +374,7 @@
       `).join('');
     }
 
-    // 渲染目录视图
+    // 渲染目录视图（默认折叠）
     function renderCatalogView(categories) {
       const container = document.getElementById('catalogView');
       if (!categories || categories.length === 0) {
@@ -383,13 +383,13 @@
       }
       container.innerHTML = categories.map(cat => `
         <div class="catalog-category" data-category="${cat.name}">
-          <div class="catalog-header expanded" onclick="toggleCategory(this)">
+          <div class="catalog-header" onclick="toggleCategory(this)">
             <i class="fas fa-chevron-right arrow"></i>
             <span class="cat-icon">${cat.icon}</span>
             <span class="cat-name">${cat.name}</span>
             <span class="cat-count">${cat.sites.length} 个工具</span>
           </div>
-          <div class="catalog-list">
+          <div class="catalog-list hidden">
             ${cat.sites.map(site => `
               <a href="${site.url}" class="catalog-item" target="_blank" rel="noopener">
                 <span class="item-name">${highlightText(site.name, currentKeyword)}</span>
@@ -425,7 +425,7 @@
       if (!sitesData) return;
 
       if (keyword) {
-        // 搜索时过滤并显示所有分类
+        // 搜索时过滤并显示所有分类，展开所有分类
         const filtered = sitesData.categories.map(cat => ({
           ...cat,
           sites: cat.sites.filter(site => 
