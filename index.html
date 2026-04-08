@@ -124,6 +124,12 @@
       border-top: 1px solid #e5e7eb;
       margin-top: 16px;
     }
+    .search-highlight {
+      background: #fef08a;
+      color: #1e293b;
+      padding: 0 2px;
+      border-radius: 4px;
+    }
     @media (max-width: 768px) {
       header {
         padding: 24px 16px;
@@ -181,6 +187,19 @@
       }
     }
 
+    // 转义正则表达式特殊字符
+    function escapeRegex(string) {
+      return string.replace(/[.*+?^${}()|[\]\\]/g, '\\$&');
+    }
+
+    // 高亮文本中的关键词
+    function highlightText(text, keyword) {
+      if (!keyword) return text;
+      const escaped = escapeRegex(keyword);
+      const regex = new RegExp(`(${escaped})`, 'gi');
+      return text.replace(regex, '<mark class="search-highlight">$1</mark>');
+    }
+
     function renderCategories(categories) {
       const container = document.getElementById('categories');
       container.innerHTML = categories.map(cat => `
@@ -189,8 +208,8 @@
           <div class="sites-grid">
             ${cat.sites.map(site => `
               <a href="${site.url}" class="site-card" target="_blank" rel="noopener">
-                <div class="name">${site.name}</div>
-                <div class="desc">${site.desc}</div>
+                <div class="name">${highlightText(site.name, currentKeyword)}</div>
+                <div class="desc">${highlightText(site.desc, currentKeyword)}</div>
               </a>
             `).join('')}
           </div>
@@ -198,29 +217,34 @@
       `).join('');
     }
 
+    // 当前搜索关键词
+    let currentKeyword = '';
+
     function filterSites() {
-      const keyword = document.getElementById('searchInput').value.toLowerCase();
+      const keyword = document.getElementById('searchInput').value.trim();
+      currentKeyword = keyword;
       
       if (!sitesData) return;
 
-      if (!keyword) {
-        renderCategories(sitesData.categories);
-        return;
-      }
+      if (keyword) {
+        // 搜索时显示所有分类
+        const filtered = sitesData.categories.map(cat => ({
+          ...cat,
+          sites: cat.sites.filter(site => 
+            site.name.toLowerCase().includes(keyword.toLowerCase()) || 
+            site.desc.toLowerCase().includes(keyword.toLowerCase())
+          )
+        })).filter(cat => cat.sites.length > 0);
 
-      const filtered = sitesData.categories.map(cat => ({
-        ...cat,
-        sites: cat.sites.filter(site => 
-          site.name.toLowerCase().includes(keyword) || 
-          site.desc.toLowerCase().includes(keyword)
-        )
-      })).filter(cat => cat.sites.length > 0);
-
-      if (filtered.length === 0) {
-        document.getElementById('categories').innerHTML = 
-          '<div class="no-results">未找到匹配结果</div>';
+        if (filtered.length === 0) {
+          document.getElementById('categories').innerHTML = 
+            '<div class="no-results">未找到匹配结果</div>';
+        } else {
+          renderCategories(filtered);
+        }
       } else {
-        renderCategories(filtered);
+        // 清空搜索时保持当前显示状态（不重置分类）
+        renderCategories(sitesData.categories);
       }
     }
 
