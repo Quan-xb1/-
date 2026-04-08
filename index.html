@@ -4,6 +4,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>资产评估工具导航</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
   <style>
     * {
       margin: 0;
@@ -38,13 +39,20 @@
       margin: 0 auto;
       padding: 32px 24px;
     }
-    .search-box {
+    .toolbar {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      gap: 16px;
       margin-bottom: 32px;
-      text-align: center;
+      flex-wrap: wrap;
+    }
+    .search-box {
+      flex: 1;
+      max-width: 480px;
     }
     .search-box input {
       width: 100%;
-      max-width: 480px;
       padding: 14px 20px;
       font-size: 15px;
       border: 1px solid #d1d5db;
@@ -56,6 +64,32 @@
     .search-box input:focus {
       border-color: #1a365d;
       box-shadow: 0 0 0 3px rgba(26, 54, 93, 0.1);
+    }
+    .view-switch {
+      display: flex;
+      background: #e5e7eb;
+      border-radius: 8px;
+      padding: 4px;
+    }
+    .view-switch button {
+      padding: 10px 16px;
+      font-size: 14px;
+      border: none;
+      background: transparent;
+      color: #6b7280;
+      cursor: pointer;
+      border-radius: 6px;
+      transition: all 0.2s;
+    }
+    .view-switch button.active {
+      background: #1a365d;
+      color: white;
+    }
+    .view-switch button:hover:not(.active) {
+      background: #d1d5db;
+    }
+    .view-switch button i {
+      margin-right: 6px;
     }
     .category {
       background: white;
@@ -110,6 +144,96 @@
       color: #6b7280;
       line-height: 1.4;
     }
+    /* 目录视图样式 */
+    .catalog-view {
+      display: none;
+    }
+    .catalog-view.active {
+      display: block;
+    }
+    .catalog-category {
+      background: white;
+      border-radius: 12px;
+      margin-bottom: 16px;
+      box-shadow: 0 1px 3px rgba(0, 0, 0, 0.08);
+      border: 1px solid #e5e7eb;
+      overflow: hidden;
+    }
+    .catalog-category.hidden {
+      display: none;
+    }
+    .catalog-header {
+      display: flex;
+      align-items: center;
+      padding: 16px 20px;
+      cursor: pointer;
+      user-select: none;
+      background: #fafafa;
+      border-bottom: 1px solid #e5e7eb;
+    }
+    .catalog-header:hover {
+      background: #f0f4f8;
+    }
+    .catalog-header .arrow {
+      margin-right: 10px;
+      color: #6b7280;
+      transition: transform 0.2s;
+      font-size: 12px;
+    }
+    .catalog-header.expanded .arrow {
+      transform: rotate(90deg);
+    }
+    .catalog-header .cat-icon {
+      margin-right: 8px;
+      font-size: 1em;
+    }
+    .catalog-header .cat-name {
+      font-weight: 600;
+      color: #1a365d;
+      font-size: 1em;
+    }
+    .catalog-header .cat-count {
+      margin-left: auto;
+      color: #9ca3af;
+      font-size: 0.85em;
+    }
+    .catalog-list {
+      padding: 8px 0;
+    }
+    .catalog-list.hidden {
+      display: none;
+    }
+    .catalog-item {
+      display: flex;
+      align-items: center;
+      padding: 10px 20px 10px 40px;
+      text-decoration: none;
+      color: #333;
+      transition: background 0.15s;
+    }
+    .catalog-item:hover {
+      background: #f0f4f8;
+    }
+    .catalog-item .item-name {
+      flex: 1;
+      font-weight: 500;
+      color: #1a365d;
+    }
+    .catalog-item .item-name:hover {
+      text-decoration: underline;
+    }
+    .catalog-item .item-tag {
+      font-size: 0.75em;
+      padding: 2px 8px;
+      background: #eef2f7;
+      color: #6b7280;
+      border-radius: 4px;
+      margin-right: 12px;
+    }
+    .catalog-item .external-icon {
+      color: #9ca3af;
+      font-size: 0.85em;
+    }
     .no-results {
       text-align: center;
       padding: 60px 20px;
@@ -140,6 +264,13 @@
       .container {
         padding: 24px 16px;
       }
+      .toolbar {
+        flex-direction: column;
+      }
+      .search-box {
+        max-width: 100%;
+        width: 100%;
+      }
       .category {
         padding: 20px;
         margin-bottom: 20px;
@@ -153,6 +284,10 @@
       .sites-grid {
         grid-template-columns: 1fr;
       }
+      .view-switch button {
+        padding: 8px 12px;
+        font-size: 13px;
+      }
     }
   </style>
 </head>
@@ -163,10 +298,22 @@
   </header>
   
   <div class="container">
-    <div class="search-box">
-      <input type="text" id="searchInput" placeholder="🔍 搜索网站名称或描述..." oninput="filterSites()">
+    <div class="toolbar">
+      <div class="search-box">
+        <input type="text" id="searchInput" placeholder="🔍 搜索网站名称或描述..." oninput="handleSearch()">
+      </div>
+      <div class="view-switch">
+        <button id="cardViewBtn" class="active" onclick="switchView('card')">
+          <i class="fas fa-th-large"></i>卡片
+        </button>
+        <button id="catalogViewBtn" onclick="switchView('catalog')">
+          <i class="fas fa-list-ul"></i>目录
+        </button>
+      </div>
     </div>
-    <div id="categories"></div>
+    
+    <div id="cardView" class="card-view"></div>
+    <div id="catalogView" class="catalog-view"></div>
   </div>
   
   <footer>
@@ -174,15 +321,20 @@
 
   <script>
     let sitesData = null;
+    let currentKeyword = '';
+    let currentView = 'card';
 
     async function loadSites() {
       try {
         const response = await fetch('sites.json');
         sitesData = await response.json();
-        renderCategories(sitesData.categories);
+        renderCardView(sitesData.categories);
+        renderCatalogView(sitesData.categories);
       } catch (error) {
         console.error('加载数据失败:', error);
-        document.getElementById('categories').innerHTML = 
+        document.getElementById('cardView').innerHTML = 
+          '<div class="no-results">数据加载失败，请刷新页面重试</div>';
+        document.getElementById('catalogView').innerHTML = 
           '<div class="no-results">数据加载失败，请刷新页面重试</div>';
       }
     }
@@ -200,8 +352,13 @@
       return text.replace(regex, '<mark class="search-highlight">$1</mark>');
     }
 
-    function renderCategories(categories) {
-      const container = document.getElementById('categories');
+    // 渲染卡片视图
+    function renderCardView(categories) {
+      const container = document.getElementById('cardView');
+      if (!categories || categories.length === 0) {
+        container.innerHTML = '<div class="no-results">未找到匹配结果</div>';
+        return;
+      }
       container.innerHTML = categories.map(cat => `
         <div class="category" data-category="${cat.name}">
           <h2><span class="icon">${cat.icon}</span> ${cat.name}</h2>
@@ -217,34 +374,77 @@
       `).join('');
     }
 
-    // 当前搜索关键词
-    let currentKeyword = '';
+    // 渲染目录视图
+    function renderCatalogView(categories) {
+      const container = document.getElementById('catalogView');
+      if (!categories || categories.length === 0) {
+        container.innerHTML = '<div class="no-results">未找到匹配结果</div>';
+        return;
+      }
+      container.innerHTML = categories.map(cat => `
+        <div class="catalog-category" data-category="${cat.name}">
+          <div class="catalog-header expanded" onclick="toggleCategory(this)">
+            <i class="fas fa-chevron-right arrow"></i>
+            <span class="cat-icon">${cat.icon}</span>
+            <span class="cat-name">${cat.name}</span>
+            <span class="cat-count">${cat.sites.length} 个工具</span>
+          </div>
+          <div class="catalog-list">
+            ${cat.sites.map(site => `
+              <a href="${site.url}" class="catalog-item" target="_blank" rel="noopener">
+                <span class="item-name">${highlightText(site.name, currentKeyword)}</span>
+                ${site.tag ? `<span class="item-tag">${highlightText(site.tag, currentKeyword)}</span>` : ''}
+                <i class="fas fa-external-link-alt external-icon"></i>
+              </a>
+            `).join('')}
+          </div>
+        </div>
+      `).join('');
+    }
 
-    function filterSites() {
+    // 切换分类展开/折叠
+    function toggleCategory(header) {
+      header.classList.toggle('expanded');
+      const list = header.nextElementSibling;
+      list.classList.toggle('hidden');
+    }
+
+    // 切换视图
+    function switchView(view) {
+      currentView = view;
+      document.getElementById('cardViewBtn').classList.toggle('active', view === 'card');
+      document.getElementById('catalogViewBtn').classList.toggle('active', view === 'catalog');
+      document.getElementById('cardView').style.display = view === 'card' ? 'block' : 'none';
+      document.getElementById('catalogView').classList.toggle('active', view === 'catalog');
+    }
+
+    function handleSearch() {
       const keyword = document.getElementById('searchInput').value.trim();
       currentKeyword = keyword;
       
       if (!sitesData) return;
 
       if (keyword) {
-        // 搜索时显示所有分类
+        // 搜索时过滤并显示所有分类
         const filtered = sitesData.categories.map(cat => ({
           ...cat,
           sites: cat.sites.filter(site => 
             site.name.toLowerCase().includes(keyword.toLowerCase()) || 
-            site.desc.toLowerCase().includes(keyword.toLowerCase())
+            site.desc.toLowerCase().includes(keyword.toLowerCase()) ||
+            (site.tag && site.tag.toLowerCase().includes(keyword.toLowerCase()))
           )
         })).filter(cat => cat.sites.length > 0);
 
-        if (filtered.length === 0) {
-          document.getElementById('categories').innerHTML = 
-            '<div class="no-results">未找到匹配结果</div>';
-        } else {
-          renderCategories(filtered);
-        }
+        renderCardView(filtered);
+        renderCatalogView(filtered);
+        
+        // 搜索时展开所有分类
+        document.querySelectorAll('.catalog-header').forEach(h => h.classList.add('expanded'));
+        document.querySelectorAll('.catalog-list').forEach(l => l.classList.remove('hidden'));
       } else {
-        // 清空搜索时保持当前显示状态（不重置分类）
-        renderCategories(sitesData.categories);
+        // 清空搜索时保持当前状态
+        renderCardView(sitesData.categories);
+        renderCatalogView(sitesData.categories);
       }
     }
 
